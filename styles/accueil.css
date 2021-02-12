@@ -15,4 +15,45 @@
 }
 
 .container{
+    position: absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    transform: translate(30%, 255%);
+}
+
+
+@media only screen and (max-width:1500px){
+    .container{
+        transform: translate(10%, 200%);
+    }
+
+}
+
+@media only screen and (max-width:1200px){
+    .container{
+        transform: translate(10%, 200%);
+    }
+
+}
+
+@media only screen and (max-width:769px){
+    .container{
+        transform: translate(3%, 100%);
+    }
+
+}
+
+@media  only screen and (max-width:669px){
+    .container{
+        transform: translate(3%, 200%);
+    }
+
+}
+
+@media only screen and (max-width:577px){
+    .container{
+        transform: translate(3%, 200%);
+    }
+
 }
