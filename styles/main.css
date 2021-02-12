@@ -10,6 +10,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Alata', sans-serif;
+    padding: 0; margin: 0;
 }
 
 html{
@@ -43,5 +44,8 @@ h3{
     --regular:'Alata', sans-serif;
 }
 
+.btn{
+    background-color: var(--primary);
+}
 
 
