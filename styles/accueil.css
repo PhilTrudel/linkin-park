@@ -1,0 +1,28 @@
+
+.main_img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position:50% 50%;
+}
+
+.contraste{
+    position: absolute;
+    background-color: var(--secondary);
+    opacity: 0.15;
+    height: 100vh;
+    width: 100%;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+}
+
+.container .row {
+    height: 100vh;
+}
+
+.container .row article {
+    text-align: center;
+}
