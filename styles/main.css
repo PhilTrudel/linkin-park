@@ -1,3 +1,4 @@
+
 @import 'accueil.css';
 @import 'discographie.css';
 
@@ -16,7 +17,6 @@
     --regular:'Alata', sans-serif;
 }
 
-
 * {
     box-sizing: border-box;
     font-family: 'Alata', sans-serif;
@@ -28,7 +28,7 @@ html{
 }
 
 h1{
-font-size: 42px;
+font-size: 32px;
 font-family: 'Bowlby One SC', sans-serif;
 color: var(--primary);
 }
@@ -41,5 +41,23 @@ h3{
  font-size: 16px;
  color: var(--text);
 }
+
+.heros{
+    position: relative;
+    width: 100vw; height: 100vw;
+}
+
+picture {
+    position: absolute;
+    width: 100%; height: 100%;
+}
+
+@media screen and (orientation: landscape) {
+    .heros {
+      height: 56.25%;
+    }
+  }
+
+
 
 
