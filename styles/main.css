@@ -6,6 +6,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 
+:root{
+    --bg:#dad7cd;
+    --text:white;
+    --primary:#FFA200;
+    --primary-alt:#FFD000;
+    --secondary:#014F86;
+    --secondary-alt:#61A5C2;
+    --title:'Bowlby One SC', sans-serif;
+    --regular:'Alata', sans-serif;
+}
 
 * {
     box-sizing: border-box;
@@ -32,15 +42,22 @@ h3{
  color: var(--text);
 }
 
-
-:root{
-    --bg:#dad7cd;
-    --text:white;
-    --primary:#FFA200;
-    --primary-alt:#FFD000;
-    --secondary:#014F86;
-    --secondary-alt:#61A5C2;
-    --title:'Bowlby One SC', sans-serif;
-    --regular:'Alata', sans-serif;
+.heros{
+    position: relative;
+    width: 100vw; height: 100vw;
 }
+
+picture {
+    position: absolute;
+    width: 100%; height: 100%;
+}
+
+@media screen and (orientation: landscape) {
+    .heros {
+      height: 56.25%;
+    }
+  }
+
+
+
 
