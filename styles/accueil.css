@@ -14,15 +14,20 @@
     width: 100%;
 }
 
-.container{
+.container_index{
     position: relative;
     height: 100vh;
 }
 
-.container .row {
+.container_index .row {
     height: 100vh;
 }
 
-.container .row article {
+.container_index .row article {
     text-align: center;
+}
+
+li{
+    list-style:none;
+    color: var(--secondary);
 }
