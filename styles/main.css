@@ -7,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 
 :root{
-    --bg:#dad7cd;
     --text:white;
     --primary:#ffa200;
     --primary-alt:#FFD000;
@@ -27,6 +26,13 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 h1{
 font-size: 32px;
 font-family: 'Bowlby One SC', sans-serif;
@@ -38,8 +44,9 @@ h2{
 }
 
 h3{
- font-size: 16px;
- color: var(--text);
+ font-size: 20px;
+ color: black;
+ font-weight: bold;
 }
 
 .heros{
@@ -61,7 +68,6 @@ picture {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
   
-
 
 .custom-toggler.navbar-toggler {
     border-color: rgb(0, 0, 0);
