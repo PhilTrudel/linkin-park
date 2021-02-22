@@ -28,8 +28,7 @@
 }
 
 li{
-    list-style:none;
-    color: var(--secondary);
+    color: var(--text);
 }
 
 .card{
