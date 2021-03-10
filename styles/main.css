@@ -74,7 +74,7 @@ picture {
   } 
 
   footer{
-    background: linear-gradient(to bottom, #D38312,#FFD000);
+    background: var(--primary);
     padding: 20px 0;
     margin: 20px 0 0 0;
     color: black;
