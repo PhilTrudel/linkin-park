@@ -48,7 +48,7 @@
     font-size: 19px;
 }
 
-.swiper-container {
+.heros .swiper-container {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -56,7 +56,7 @@
     z-index: -1;
   }
   
-.swiper-slide{
+.heros .swiper-slide{
     width: 100%;
     height: 100%;
     position: relative;
@@ -69,3 +69,7 @@
     position: relative;
     object-fit: contain;
 }
+
+footer a:hover{
+    color: white;
+  }
