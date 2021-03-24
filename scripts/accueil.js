@@ -5,9 +5,9 @@ const swiper = new Swiper('.swiper-container', {
       el: '.swiper-pagination',
       clickable: true,
     },
-  });
+});
 
-  gsap.registerPlugin(ScrollTrigger); 
+gsap.registerPlugin(ScrollTrigger);
 
   let sections = document.querySelectorAll(".section");
 
@@ -26,11 +26,12 @@ const swiper = new Swiper('.swiper-container', {
     })
 
     .from(title, 
-      {x: -25, opacity: 0})
+      {x: -30, opacity: 0})
     .from(card,
-      {y: 25, opacity: 0}, '-= 0.1')
+      {y: 30, opacity: 0}, '-= 0.2')
     .from(carroussel,
-      {y: 25, opacity: 0}, '-= 0.3')
+      {y: 30, opacity: 0}, '-= 0.5')
     .from(video,
-      {y: 25, opacity: 0}, '-= 0.3')
+      {y: 30, opacity: 0}, '-= 0.5')
   });
+
