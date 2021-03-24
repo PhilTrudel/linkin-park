@@ -26,12 +26,12 @@ gsap.registerPlugin(ScrollTrigger);
     })
 
     .from(title, 
-      {x: -30, opacity: 0})
+      {x: -50, opacity: 0})
     .from(card,
-      {y: 30, opacity: 0}, '-= 0.2')
+      {y: 50, opacity: 0}, '-= 0.75')
     .from(carroussel,
-      {y: 30, opacity: 0}, '-= 0.5')
+      {y: 50, opacity: 0}, '-= 0.75')
     .from(video,
-      {y: 30, opacity: 0}, '-= 0.5')
+      {y: 50, opacity: 0}, '-= 0.75')
   });
 
