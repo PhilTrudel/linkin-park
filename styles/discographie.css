@@ -61,3 +61,7 @@ section .container h3 {
     margin-bottom: 10px;
     font-size: 2rem;
   }
+
+.split{
+    margin: 50px 0px 50px 0px;
+}
