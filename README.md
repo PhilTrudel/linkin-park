@@ -13,8 +13,8 @@ Animations Sprite sheet
     Philippe Trudel
 
     - https://codepen.io/Trudel27/pen/vYgmVyE
-    -
-    -
+    - https://codepen.io/Trudel27/pen/vYgZNRe
+    - https://codepen.io/Trudel27/pen/OJWjBeR
 
     Gabriel Beauchemin
 
