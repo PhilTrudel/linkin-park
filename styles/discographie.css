@@ -87,26 +87,29 @@ section{
 }
 
 .sprite.scrolldown{
-    background-image: url('../img/spritesheet_drums_scrolldown.png');
-    animation: scrolldown 0.75s steps(23) infinite;
+    background-position: 0 100%;
+    background-image: url('../img/spritesheets/css_sprites_animation_01_transparent.png');
+    animation: scrollDown 1s steps(29) 1;
+    animation-direction: reverse;
     }
-  @keyframes scrolldown {
-     0% { background-position: 0 0px; }
-     100% { background-position: 0px 100%; }
-  }
-
-.sprite.scrollup {
-    background-image: url('../img/spritesheet_drums_scrollup.png');
-    animation: scrollup 0.75s steps(23) infinite;
-    }
-  @keyframes scrollup {
+  @keyframes scrollDown {
      0% { background-position: 0 100%; }
      100% { background-position: 0px 0px; }
   }
 
+.sprite.scrollup {
+    background-position: 0px 86.21%;
+    background-image: url('../img/spritesheets/css_sprites_animation_03_transparent.png');
+    animation: scrollUp 1s steps(25) 1;
+    }
+  @keyframes scrollUp {
+     0% { background-position: 0 0px; }
+     100% { background-position: 0px 86.21%; }
+  }
+  
   .sprite.idle {
-    background-image: url('../img/spritesheet_drums_idle.png');
-    animation: idle 0.75s steps(23) infinite;
+    background-image: url('../img/spritesheets/css_sprites_animation_02_transparent.png');
+    animation: idle 1s steps(30) infinite;
     }
   @keyframes idle {
      0% { background-position: 0 0; }

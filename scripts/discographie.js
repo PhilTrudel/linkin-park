@@ -38,9 +38,13 @@ const swiper = new Swiper('.swiper-container', {
   let timeout;
   let animation = document.querySelector('.background-anim .sprite');
   
-  gsap.to('#main', {
+  gsap.to('.background-anim', {
     scrollTrigger: {
-      trigger: '#main',
+      trigger: '.background-anim',
+      scrub: true,
+      markers: false,
+      start: '30% 100%',
+      end: "0% 0%",
       onUpdate: (e) => {
         animation.classList.remove('idle');
         clearTimeout(timeout);
