@@ -42,9 +42,9 @@ const swiper = new Swiper('.swiper-container', {
     scrollTrigger: {
       trigger: '.background-anim',
       scrub: true,
-      markers: false,
+      markers: true,
       start: '30% 100%',
-      end: "0% 0%",
+      end: "0% 30%",
       onUpdate: (e) => {
         animation.classList.remove('idle');
         clearTimeout(timeout);
