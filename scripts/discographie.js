@@ -36,11 +36,11 @@ const swiper = new Swiper('.swiper-container', {
   });
 
   let timeout;
-  let animation = document.querySelector('.background-anim .spriteDisco');
+  let animation = document.querySelector('.background-animDisco .spriteDisco');
   
-  gsap.to('.background-anim', {
+  gsap.to('.background-animDisco', {
     scrollTrigger: {
-      trigger: '.background-anim',
+      trigger: '.background-animDisco',
       scrub: true,
       markers: false,
       start: '30% 100%',
