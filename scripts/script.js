@@ -81,7 +81,7 @@ class Quiz {
         //div
         this.div = document.createElement("div");
         this.div.classList.add("question");
-        document.body.appendChild(this.div);
+        modal.appendChild(this.div);
 
         //strong
         this.strong = document.createElement("strong");
@@ -163,69 +163,97 @@ class Quiz {
     answers() {
         let R = document.querySelectorAll("input[type = 'radio']");
         R.forEach((radio) => {
-          radio.addEventListener("change", () => {
-            if (radio.checked) {
-              if (radio.value == this.questions[this.index].r) {
-                this.goodAnswer();
-              } else {
-                this.wrongAnswer();
-              }
-              if (this.index <= this.questions.length - 1) {
-                if (this.index == this.questions.length - 1) {
-                  this.div.classList.add('last');
-                  this.div.innerText = 'Pointage:';
-                  this.strong.innerText = this.score + '/' + this.questions.length;
-                  this.div.appendChild(this.br);
-                  this.div.appendChild(this.strong);
-                  return false;
+            radio.addEventListener("change", () => {
+                if (radio.checked) {
+                    if (radio.value == this.questions[this.index].r) {
+                        this.goodAnswer();
+                    } else {
+                        this.wrongAnswer();
+                    }
+                    if (this.index <= this.questions.length - 1) {
+                        if (this.index == this.questions.length - 1) {
+                            this.div.classList.add('last');
+                            this.div.innerText = 'Pointage:';
+                            this.strong.innerText = this.score + '/' + this.questions.length;
+                            this.div.appendChild(this.br);
+                            this.div.appendChild(this.strong);
+                            return false;
+                        }
+                        this.index++;
+                        this.setVisible(this.index);
+                    }
                 }
-                this.index++;
-                this.setVisible(this.index);
-              }
-            }
-          });
+            });
         });
-      }
+    }
     goodAnswer() {
         this.score++;
-            gsap.timeline()
-                .fromTo('.logo-true',
-                    { scaleX: '0', scaleY: '0', rotation: 1 },
-                    { scaleX: '1', scaleY: '1', duration: 0.75, rotation: 360, })
-                .fromTo('.logo-true',
-                    { x: '1' },
-                    { y: '-50', duration: .25, repeat: 3, yoyo: true })
-                .fromTo('.logo-true',
-                    { scaleX: '1', scaleY: '1', duration: 0.75, rotation: 360 },
-                    { scaleX: '0', scaleY: '0', rotation: 1 }, 3);
+        gsap.timeline()
+            .fromTo('.logo-true',
+                { scaleX: '0', scaleY: '0', opacity: '0', rotation: 1 },
+                { scaleX: '1', scaleY: '1', opacity: '1', duration: 0.75, rotation: 360, })
+            .fromTo('.logo-true',
+                { x: '1' },
+                { y: '-50', duration: .25, repeat: 3, yoyo: true })
+            .fromTo('.logo-true',
+                { scaleX: '1', scaleY: '1', duration: 0.75, rotation: 360, opacity: '1'},
+                { scaleX: '0', scaleY: '0', rotation: 1, opacity: '0',},  3);
 
-            gsap.timeline()
-                .fromTo('.bg-true',
-                    { scaleX: '0', scaleY: '0' },
-                    { scaleX: '1', scaleY: '1', duration: 0.75, })
-                .fromTo('.bg-true',
-                    { scaleX: '1', scaleY: '1' },
-                    { scaleX: '0', scaleY: '0', duration: 0.75 }, 3);
+        gsap.timeline()
+            .fromTo('.bg-true',
+                { scaleX: '0', scaleY: '0', opacity: '0' },
+                { scaleX: '1', scaleY: '1', duration: 0.75, opacity: '1', })
+            .fromTo('.bg-true',
+                { scaleX: '1', scaleY: '1', opacity: '1' },
+                { scaleX: '0', scaleY: '0', duration: 0.75, opacity: '0' }, 3);
 
-            gsap.timeline()
-                .fromTo('.checkmark',
-                    { scaleX: '0', scaleY: '0' },
-                    { scaleX: '1', scaleY: '1', duration: 0.75, })
-                .fromTo('.checkmark',
-                    { scaleX: '1', scaleY: '1' },
-                    { scaleX: '0', scaleY: '0', duration: 0.75 }, 3);
+        gsap.timeline()
+            .fromTo('.checkmark',
+                { scaleX: '0', scaleY: '0', opacity: '0' },
+                { scaleX: '1', scaleY: '1', duration: 0.75, opacity: '1' })
+            .fromTo('.checkmark',
+                { scaleX: '1', scaleY: '1', opacity: '1' },
+                { scaleX: '0', scaleY: '0', duration: 0.75, opacity: '0' }, 3);
 
-            gsap.timeline()
-                .fromTo('.text-true',
-                    { opacity: '0', rotate: '0' },
-                    { opacity: '1', rotate: '360', ease: 'back.out', duration: 0.75 }, '+=0.90')
-                .fromTo('.text-true',
-                    { scale: '1' },
-                    { scale: '1.2', duration: 0.3, repeat: 3, yoyo: true })
-                .fromTo('.text-true',
-                    { y: '0' },
-                    { y: '20', opacity: '0', duration: 0.3, delay: 1, onComplete() { console.log('FINI') } });
+        gsap.timeline()
+            .fromTo('.text-true',
+                { opacity: '0', rotate: '0', opacity: '0' },
+                { opacity: '1', rotate: '360', ease: 'back.out', duration: 0.75, opacity: '1' }, '+=0.90')
+            .fromTo('.text-true',
+                { scale: '1' },
+                { scale: '1.2', duration: 0.3, repeat: 3, yoyo: true })
+            .fromTo('.text-true',
+                { y: '0', opacity: '1' },
+                { y: '20', opacity: '0', duration: 0.3, delay: 1, opacity: '0'});
     }
-  }
+
+    wrongAnswer() {
+        gsap.timeline()
+            .fromTo(".anim",
+                { scaleX: "0", scaleY: "0" },
+                { scaleX: "1", scaleY: "1", duration: 0.5 })
+            .fromTo(".anim.part02",
+                { y: "10" },
+                { y: "-10", duration: .06, repeat: 12, yoyo: true })
+            .fromTo(".anim.part01",
+                { y: "10" },
+                { y: "-10", duration: .06, repeat: 12, yoyo: true }, "<")
+            .fromTo(".anim.part02",
+                { x: "-10" },
+                { x: "10", duration: .05, repeat: 15, yoyo: true }, "<")
+            .fromTo(".anim.part01",
+                { x: "-10" },
+                { x: "10", duration: .05, repeat: 15, yoyo: true }, "<")
+            .fromTo(".anim.part02",
+                { x: "10", y: "-10" },
+                { x: "0", y: "0", duration: 0.1 })
+            .fromTo(".anim.part01",
+                { x: '10', y: "-10" },
+                { x: '0', y: "0", duration: 0.1 }, "<")
+            .fromTo('.anim',
+                { x: "0", scaleX: "1", scaleY: "1", duration: 0.5, rotation: 360 },
+                { scaleX: "0", scaleY: "0", rotation: 1 ,onComplete() { console.log('FINI') }}, 3);
+    }
+}
 
 new Quiz(questions);
