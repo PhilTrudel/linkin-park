@@ -229,28 +229,28 @@ class Quiz {
 
     wrongAnswer() {
         gsap.timeline()
-            .fromTo(".anim",
+            .fromTo(".bg-wrong",
                 { scaleX: "0", scaleY: "0" },
                 { scaleX: "1", scaleY: "1", duration: 0.5 })
-            .fromTo(".anim.part02",
+            .fromTo(".bg-wrong.cross",
                 { y: "10" },
                 { y: "-10", duration: .06, repeat: 12, yoyo: true })
-            .fromTo(".anim.part01",
+            .fromTo(".bg-wrong.red",
                 { y: "10" },
                 { y: "-10", duration: .06, repeat: 12, yoyo: true }, "<")
-            .fromTo(".anim.part02",
+            .fromTo(".bg-wrong.cross",
                 { x: "-10" },
                 { x: "10", duration: .05, repeat: 15, yoyo: true }, "<")
-            .fromTo(".anim.part01",
+            .fromTo(".bg-wrong.red",
                 { x: "-10" },
                 { x: "10", duration: .05, repeat: 15, yoyo: true }, "<")
-            .fromTo(".anim.part02",
+            .fromTo(".bg-wrong.cross",
                 { x: "10", y: "-10" },
                 { x: "0", y: "0", duration: 0.1 })
-            .fromTo(".anim.part01",
+            .fromTo(".bg-wrong.red",
                 { x: '10', y: "-10" },
                 { x: '0', y: "0", duration: 0.1 }, "<")
-            .fromTo('.anim',
+            .fromTo('.bg-wrong',
                 { x: "0", scaleX: "1", scaleY: "1", duration: 0.5, rotation: 360 },
                 { scaleX: "0", scaleY: "0", rotation: 1 ,onComplete() { console.log('FINI') }}, 3);
     }
