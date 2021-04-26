@@ -229,31 +229,37 @@ class Quiz {
 
     wrongAnswer() {
         gsap.timeline()
-            .fromTo(".bg-wrong",
-                { scaleX: "0", scaleY: "0" },
-                { scaleX: "1", scaleY: "1", duration: 0.5 })
-            .fromTo(".bg-wrong.cross",
-                { y: "10" },
-                { y: "-10", duration: .06, repeat: 12, yoyo: true })
-            .fromTo(".bg-wrong.red",
-                { y: "10" },
-                { y: "-10", duration: .06, repeat: 12, yoyo: true }, "<")
-            .fromTo(".bg-wrong.cross",
-                { x: "-10" },
-                { x: "10", duration: .05, repeat: 15, yoyo: true }, "<")
-            .fromTo(".bg-wrong.red",
-                { x: "-10" },
-                { x: "10", duration: .05, repeat: 15, yoyo: true }, "<")
-            .fromTo(".bg-wrong.cross",
-                { x: "10", y: "-10" },
-                { x: "0", y: "0", duration: 0.1 })
-            .fromTo(".bg-wrong.red",
-                { x: '10', y: "-10" },
-                { x: '0', y: "0", duration: 0.1 }, "<")
-            .fromTo('.bg-wrong',
-                { x: "0", scaleX: "1", scaleY: "1", duration: 0.5, rotation: 360 },
-                { scaleX: "0", scaleY: "0", rotation: 1 ,onComplete() { console.log('FINI') }}, 3);
-    }
+            .fromTo(".logo",
+                { scaleX: "0", scaleY:"0", opacity:0}, 
+                { scaleX: "1", scaleY:"1" , duration: 0.5, opacity:1})
+            .fromTo(".text-wrong",
+                { opacity:0}, 
+                { opacity:1, duration: 0.5}, "<")
+            .fromTo(".logo.part02",
+                { y: "10" }, 
+                { y: "-10", duration: .06, repeat:12, yoyo:true})
+            .fromTo(".logo.part01",
+                { y: "10" }, 
+                { y: "-10", duration: .06, repeat:12, yoyo:true}, "<")
+            .fromTo(".logo.part02",
+                { x: "-10" }, 
+                { x: "10", duration: .05, repeat:15, yoyo:true}, "<")
+            .fromTo(".logo.part01",
+                { x: "-10" }, 
+                { x: "10", duration: .05, repeat:15, yoyo:true}, "<")
+            .fromTo(".logo.part02",
+                { x: "10", y:"-10" }, 
+                { x: "0", y: "0", duration: 0.1})
+            .fromTo(".logo.part01",
+                { x: '10', y:"-10" }, 
+                { x: '0', y: "0", duration: 0.1}, "<")
+            .fromTo('.logo',
+                { x: "0", scaleX: "1", scaleY:"1", duration: 0.5, rotation: 360}, 
+                { scaleX: "0", scaleY:"0", rotation: 1}, 3)
+            .fromTo('.text-wrong',
+                { opacity:1 }, 
+                { opacity:0, duration: 0.5}, "<");
+        }
 }
 
 new Quiz(questions);
