@@ -1,69 +1,9 @@
 //Questions Quiz //
 
 let modal = document.querySelector('.modal-body.quiz');
-let questions = [
-    {
-        q: "Quel chanson de Linkin Park a été la bande sonore pour le film Transformer?",
-        o1: 'Numb',
-        o2: 'In The End',
-        o3: 'What Ive Done',
-        o4: 'Bleeding Out',
-        r: 3
-    },
-    {
-        q: 'Est-ce que le groupe est toujours actif?',
-        o1: "Vrai",
-        o2: "Faux",
-        r: 1
-    },
-    {
-        q: 'Qui est le bassiste de Linkin Park?',
-        o1: 'Will Farrel',
-        o2: 'Farrel Williams',
-        o3: 'Colin Farrell',
-        o4: 'Dave Farrell',
-        r: 4
-    },
-    {
-        q: 'Quel catégorie de musique Linkin Park fait partie ?',
-        o1: 'Country',
-        o2: 'Rap',
-        o3: 'Jazz',
-        o4: 'Rock',
-        r: 4
-    },
-    {
-        q: 'La formation de Linkin Park contient combien de membre présentement ?',
-        o1: '4',
-        o2: '2',
-        o3: '5',
-        o4: '6',
-        r: 3
-    },
-    {
-        q: "Où le groupe est-il d'origine ?",
-        o1: "Arouga Hills",
-        o2: "Houston",
-        o3: 'Atlanta',
-        o4: 'New-York',
-        r: 1
-    },
-    {
-        q: 'Quel est le dernier album ?',
-        o1: "Hybrid Theory",
-        o2: "One More Light",
-        o3: 'Minutes to Midnight',
-        o4: 'A Thousand Suns',
-        r: 2
-    },
-    {
-        q: 'Est-ce que Linkin Park a déjà gagné un Grammy?',
-        o1: "Vrai",
-        o2: "Faux",
-        r: 1
-    },
-
-]
+fetch("..public_html/json")
+.then(res => res.json())
+.then(result => console.log(result))
 
 
 class Quiz {
