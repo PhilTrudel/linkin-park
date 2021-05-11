@@ -7,4 +7,17 @@ Développeur rouge : Philippe Trudel (page d'accueil)
 
 Développeur bleu : Gabriel Beauchemin (page discographie)
 
-Url du site : https://linkinpark-megazord.qc.lu/index.html
+
+Animations Sprite sheet
+
+    Philippe Trudel
+
+    - https://codepen.io/Trudel27/pen/vYgmVyE
+    - https://codepen.io/Trudel27/pen/vYgZNRe
+    - https://codepen.io/Trudel27/pen/OJWjBeR
+
+    Gabriel Beauchemin
+
+    -
+    -
+    -
