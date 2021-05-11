@@ -202,4 +202,3 @@ class Quiz {
         }
 }
 
-new Quiz(questions);
