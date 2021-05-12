@@ -18,6 +18,8 @@ Animations Sprite sheet
 
     Gabriel Beauchemin
 
-    -
-    -
-    -
+    -https://codepen.io/gabriel-giovanna/pen/MWpKgOR
+    -https://codepen.io/gabriel-giovanna/pen/ZEeQzaN
+    -https://codepen.io/gabriel-giovanna/pen/XWMXrVr
+
+Url site web : https://linkinpark-megazord.qc.lu/
