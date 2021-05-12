@@ -1,10 +1,10 @@
 //Questions Quiz //
 
 let modal = document.querySelector('.modal-body.quiz');
-fetch("..public_html/json")
-.then(res => res.json())
-.then(result => console.log(result))
 
+fetch("https://linkinpark-megazord.qc.lu/json/")
+.then(res => res.json())
+.then(data => new Quiz(data.questions))
 
 class Quiz {
     constructor(tableau) {
@@ -202,4 +202,5 @@ class Quiz {
         }
 }
 
-new Quiz(questions);
+
+
