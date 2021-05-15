@@ -24,7 +24,7 @@ class Quiz {
     }
     creerHtml(Q, value) {
         //div
-        console.log(Q);
+        console.log(Q.acf);
         this.div = document.createElement("div");
         this.div.classList.add("question");
         modal.appendChild(this.div);
@@ -39,7 +39,7 @@ class Quiz {
         this.div.appendChild(this.br);
 
         //options
-        if ("o1" in Q) {
+        if ("o1" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -54,7 +54,7 @@ class Quiz {
             this.div.appendChild(this.br);
         }
 
-        if ("o2" in Q) {
+        if ("o2" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -69,7 +69,7 @@ class Quiz {
             this.div.appendChild(this.br);
         }
 
-        if ("o3" in Q) {
+        if ("o3" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -84,7 +84,7 @@ class Quiz {
             this.div.appendChild(this.br);
         }
 
-        if ("o4" in Q) {
+        if ("o4" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
