@@ -1,10 +1,15 @@
 //Questions Quiz //
 
 let modal = document.querySelector('.modal-body.quiz');
+const url = "http://linkinpark-megazord.qc.lu/linkinpark-api";
 
-fetch("https://linkinpark-megazord.qc.lu/json/")
+fetch(`${url}/index.php/wp-json/wp/v2/posts`)
 .then(res => res.json())
-.then(data => new Quiz(data.questions))
+.then(data => new Quiz(data))
+
+/*fetch("http://linkinpark-megazord.qc.lu/json")
+.then(res => res.json())
+.then(data => new Quiz(data.questions))*/
 
 class Quiz {
     constructor(tableau) {
@@ -19,13 +24,14 @@ class Quiz {
     }
     creerHtml(Q, value) {
         //div
+        console.log(Q);
         this.div = document.createElement("div");
         this.div.classList.add("question");
         modal.appendChild(this.div);
 
         //strong
         this.strong = document.createElement("strong");
-        this.strong.innerText = Q.q;
+        this.strong.innerText = Q.acf.q;
         this.div.appendChild(this.strong);
 
         //br
@@ -41,7 +47,7 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o1;
+            label.innerText = Q.acf.o1;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
@@ -56,7 +62,7 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o2;
+            label.innerText = Q.acf.o2;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
@@ -71,7 +77,7 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o3;
+            label.innerText = Q.acf.o3;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
@@ -86,7 +92,7 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o4;
+            label.innerText = Q.acf.o4;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
@@ -105,7 +111,7 @@ class Quiz {
         R.forEach((radio) => {
             radio.addEventListener("change", () => {
                 if (radio.checked) {
-                    if (radio.value == this.questions[this.index].r) {
+                    if (radio.value == this.questions[this.index].acf.r) {
                         this.goodAnswer();
                     } else {
                         this.wrongAnswer();
