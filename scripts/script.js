@@ -1,69 +1,15 @@
 //Questions Quiz //
 
 let modal = document.querySelector('.modal-body.quiz');
-let questions = [
-    {
-        q: "Quel chanson de Linkin Park a été la bande sonore pour le film Transformer?",
-        o1: 'Numb',
-        o2: 'In The End',
-        o3: 'What Ive Done',
-        o4: 'Bleeding Out',
-        r: 3
-    },
-    {
-        q: 'Est-ce que le groupe est toujours actif?',
-        o1: "Vrai",
-        o2: "Faux",
-        r: 1
-    },
-    {
-        q: 'Qui est le bassiste de Linkin Park?',
-        o1: 'Will Farrel',
-        o2: 'Farrel Williams',
-        o3: 'Colin Farrell',
-        o4: 'Dave Farrell',
-        r: 4
-    },
-    {
-        q: 'Quel catégorie de musique Linkin Park fait partie ?',
-        o1: 'Country',
-        o2: 'Rap',
-        o3: 'Jazz',
-        o4: 'Rock',
-        r: 4
-    },
-    {
-        q: 'La formation de Linkin Park contient combien de membre présentement ?',
-        o1: '4',
-        o2: '2',
-        o3: '5',
-        o4: '6',
-        r: 3
-    },
-    {
-        q: "Où le groupe est-il d'origine ?",
-        o1: "Arouga Hills",
-        o2: "Houston",
-        o3: 'Atlanta',
-        o4: 'New-York',
-        r: 1
-    },
-    {
-        q: 'Quel est le dernier album ?',
-        o1: "Hybrid Theory",
-        o2: "One More Light",
-        o3: 'Minutes to Midnight',
-        o4: 'A Thousand Suns',
-        r: 2
-    },
-    {
-        q: 'Est-ce que Linkin Park a déjà gagné un Grammy?',
-        o1: "Vrai",
-        o2: "Faux",
-        r: 1
-    },
+const url = "http://linkinpark-megazord.qc.lu/linkinpark-api";
 
-]
+fetch(`${url}/index.php/wp-json/wp/v2/posts`)
+.then(res => res.json())
+.then(data => new Quiz(data))
+
+/*fetch("http://linkinpark-megazord.qc.lu/json")
+.then(res => res.json())
+.then(data => new Quiz(data.questions))*/
 
 class Quiz {
     constructor(tableau) {
@@ -78,13 +24,14 @@ class Quiz {
     }
     creerHtml(Q, value) {
         //div
+        console.log(Q.acf);
         this.div = document.createElement("div");
         this.div.classList.add("question");
         modal.appendChild(this.div);
 
         //strong
         this.strong = document.createElement("strong");
-        this.strong.innerText = Q.q;
+        this.strong.innerText = Q.acf.q;
         this.div.appendChild(this.strong);
 
         //br
@@ -92,7 +39,7 @@ class Quiz {
         this.div.appendChild(this.br);
 
         //options
-        if ("o1" in Q) {
+        if ("o1" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -100,14 +47,14 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o1;
+            label.innerText = Q.acf.o1;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
             this.div.appendChild(this.br);
         }
 
-        if ("o2" in Q) {
+        if ("o2" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -115,14 +62,14 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o2;
+            label.innerText = Q.acf.o2;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
             this.div.appendChild(this.br);
         }
 
-        if ("o3" in Q) {
+        if ("o3" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -130,14 +77,14 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o3;
+            label.innerText = Q.acf.o3;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
             this.div.appendChild(this.br);
         }
 
-        if ("o4" in Q) {
+        if ("o4" in Q.acf) {
             let radio = document.createElement("input");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "question" + value);
@@ -145,7 +92,7 @@ class Quiz {
             this.div.appendChild(radio);
 
             let label = document.createElement("label");
-            label.innerText = Q.o4;
+            label.innerText = Q.acf.o4;
             this.div.appendChild(label);
 
             this.br = document.createElement("br");
@@ -164,7 +111,7 @@ class Quiz {
         R.forEach((radio) => {
             radio.addEventListener("change", () => {
                 if (radio.checked) {
-                    if (radio.value == this.questions[this.index].r) {
+                    if (radio.value == this.questions[this.index].acf.r) {
                         this.goodAnswer();
                     } else {
                         this.wrongAnswer();
@@ -261,4 +208,7 @@ class Quiz {
         }
 }
 
-new Quiz(questions);
+
+
+
+
